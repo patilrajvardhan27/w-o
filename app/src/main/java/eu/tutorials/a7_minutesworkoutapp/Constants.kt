@@ -1,8 +1,19 @@
 package eu.tutorials.a7_minutesworkoutapp
 
+import java.util.*
+
+/**
+ * Constant Class where you can add the constant values of the project.
+ */
+// Making a default list of exercises in the Constant file along with the name image using the Model Class which later on will be used to show in the UI
+// START
 class Constants {
     companion object {
 
+        // The drawable images used here are added in the drawable folder.
+        /**
+         * Here we are adding all exercises to a single list with all the default values.
+         */
         fun defaultExerciseList(): ArrayList<ExerciseModel> {
 
             val exerciseList = ArrayList<ExerciseModel>()
@@ -76,3 +87,4 @@ class Constants {
         }
     }
 }
+// END

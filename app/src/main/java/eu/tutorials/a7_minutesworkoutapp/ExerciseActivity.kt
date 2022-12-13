@@ -39,7 +39,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var binding:ActivityExerciseBinding? = null
     private var tts: TextToSpeech? = null // Variable for Text to Speech
     private var player: MediaPlayer? = null
-    private var exerciseAdapter: ExerciseStatusAdapter? = null
+  private var exerciseAdapter: ExerciseStatusAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,7 +65,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         try {
             val soundURI =
-                Uri.parse("android.resource://eu.tutorials.a7_minutesworkoutapp/" + R.raw.app_src_main_res_raw_press_start)
+                Uri.parse("android.resource://eu.tutorials.a7_minutesworkoutapp/" + R.raw.press_start)
             player = MediaPlayer.create(applicationContext, soundURI)
             player?.isLooping = false // Sets the player to be looping or non-looping.
             player?.start() // Starts Playback.
@@ -117,7 +117,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 exerciseList!![currentExercisePosition].setIsSelected(true) // Current Item is selected
                 exerciseAdapter!!.notifyDataSetChanged() // Notified the current item to adapter class to reflect it into UI.
                 // END
-                setupExerciseView()
+           setupExerciseView()
             }
         }.start()
     }
@@ -130,7 +130,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
      * Function is used to set the progress of the timer using the progress for Exercise View.
      */
     private fun setupExerciseView() {
-        binding?.flRestView?.visibility = View.INVISIBLE
+ binding?.flRestView?.visibility = View.INVISIBLE
         binding?.tvTitle?.visibility = View.INVISIBLE
         binding?.tvUpcomingExerciseName?.visibility = View.INVISIBLE
         binding?.upcomingLabel?.visibility = View.INVISIBLE
@@ -176,7 +176,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             override fun onTick(millisUntilFinished: Long) {
                 exerciseProgress++
                 binding?.progressBarExercise?.progress = exerciseTimerDuration.toInt() - exerciseProgress
-                binding?.tvTimerExercise?.text = (exerciseTimerDuration.toInt() - exerciseProgress).toString()
+               binding?.tvTimerExercise?.text = (exerciseTimerDuration.toInt() - exerciseProgress).toString()
             }
 
             override fun onFinish() {
@@ -187,8 +187,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     exerciseAdapter?.notifyDataSetChanged()
                     setupRestView()
                 } else {
-                    finish()
-                    val intent = Intent(this@ExerciseActivity,FinishActivity::class.java)
+                     finish()
+                  val intent = Intent(this@ExerciseActivity,FinishActivity::class.java)
                     startActivity(intent)
                 }
                 // END
@@ -258,7 +258,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         // Defining a layout manager for the recycle view
         // Here we have used a LinearLayout Manager with horizontal scroll.
-        binding?.rvExerciseStatus?.layoutManager =
+       binding?.rvExerciseStatus?.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         // As the adapter expects the exercises list and context so initialize it passing it.

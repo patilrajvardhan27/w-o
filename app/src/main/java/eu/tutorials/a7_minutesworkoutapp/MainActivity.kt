@@ -8,6 +8,7 @@ import android.widget.Toast
 import eu.tutorials.a7_minutesworkoutapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    //  The binding is name just like the name of the layout with Binding attached
     private var binding:ActivityMainBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +24,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-       binding = null
+        binding = null
     }
 }

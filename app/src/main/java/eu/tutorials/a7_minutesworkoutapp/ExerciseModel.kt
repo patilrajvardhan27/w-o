@@ -1,19 +1,21 @@
 package eu.tutorials.a7_minutesworkoutapp
 
-class ExerciseModel (
-    private var id : Int ,
-    private var name : String,
+class ExerciseModel(
+    private var id: Int,
+    private var name: String,
     private var image: Int,
-    private var isCompleted : Boolean,
-    private var isSelected : Boolean,
+    private var isCompleted: Boolean,
+    private var isSelected: Boolean
+) {
 
-    ){
-    fun getId() : Int{
-        return id;
+    fun getId(): Int {
+        return id
     }
-    fun setId(id:Int){
-        this.id=id
+
+    fun setId(id: Int) {
+        this.id = id
     }
+
     fun getName(): String {
         return name
     }
@@ -45,6 +47,5 @@ class ExerciseModel (
     fun setIsSelected(isSelected: Boolean) {
         this.isSelected = isSelected
     }
-
-
 }
+// END
