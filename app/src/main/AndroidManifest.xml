@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="eu.tutorials.a7_minutesworkoutapp">
     <queries>
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE" />
@@ -13,14 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.7MinutesWorkoutApp">
-        <!--TODO(Step 7 : Update the activity attribute as per requirement.)-->
-        <!--START-->
+        <activity
+            android:name=".activity_bmi"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
         <activity
             android:name=".FinishActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
-            />
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name=".ExerciseActivity"
             android:exported="true"
