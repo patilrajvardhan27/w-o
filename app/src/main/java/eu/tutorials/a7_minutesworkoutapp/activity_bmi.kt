@@ -45,7 +45,7 @@ class activity_bmi : AppCompatActivity() {
 
                 displayBMIResult(bmi)
             } else {
-                Toast.makeText(this@activity_bmi, "Please enter valid values.", Toast.LENGTH_SHORT)
+                Toast.makeText(this@activity_bmiz, "Please enter valid values.", Toast.LENGTH_SHORT)
                     .show()
             }
         }
