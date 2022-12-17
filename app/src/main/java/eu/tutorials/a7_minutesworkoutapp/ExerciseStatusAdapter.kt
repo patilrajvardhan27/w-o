@@ -39,7 +39,8 @@ class ExerciseStatusAdapter(val items: ArrayList<ExerciseModel>) :
         val model: ExerciseModel = items[position]
 
         holder.tvItem.text = model.getId().toString()
-       // https://stackoverflow.com/questions/8472349/how-to-set-text-color-to-a-text-view-programmatically
+
+        // https://stackoverflow.com/questions/8472349/how-to-set-text-color-to-a-text-view-programmatically
         when {
             model.getIsSelected() -> {
                 holder.tvItem.background =

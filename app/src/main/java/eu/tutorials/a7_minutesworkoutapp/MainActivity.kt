@@ -3,6 +3,8 @@ package eu.tutorials.a7_minutesworkoutapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.FrameLayout
+import android.widget.Toast
 import eu.tutorials.a7_minutesworkoutapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,13 +20,21 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //TODO(Step 6 : Adding a click event to the BMI calculator button and navigating it to the BMI calculator feature.)
-        //START
         binding?.flBMI?.setOnClickListener {
             // Launching the BMI Activity
             val intent = Intent(this, activity_bmi::class.java)
             startActivity(intent)
         }
+
+
+        // TODO(Step 6 : Adding a click event to launch the History Screen Activity from Main Activity.)
+        // START
+        binding?.flHistory?.setOnClickListener {
+            // Launching the History Activity
+            val intent = Intent(this, HistoryActivity::class.java)
+            startActivity(intent)
+        }
+        //END
     }
 
 
